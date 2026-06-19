@@ -1,5 +1,9 @@
 # Refloow Photo Studio
 
+<p align="center">
+<img width="166" height="175" alt="refloow-photo-studio-logo" src="https://github.com/user-attachments/assets/9b33465f-81b4-45ca-a20c-4d09941cd4af" />
+</p>
+
 **Refloow Photo Studio** is built on a simple idea: photo editing shouldn't require a degree or months of tutorials.
 
 The goal of the project is to make professional-looking photo editing accessible to everyone, regardless of skill level. With just a few clicks, users can achieve high-quality results while preserving 100% of the original image quality. Everything runs locally, remains completely private, and requires no accounts, subscriptions, or data collection.
