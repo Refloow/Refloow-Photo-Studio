@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refloow Photo Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.css">
+</head>
+<body>
+  <body>
+  <div id="custom-title-bar">
+    <div class="title-buttons" style="-webkit-app-region: no-drag;">
+      <img src="./img/refloow-photo-studio-logo.png" alt="Refloow Icon" class="title-icon" />
+      <button id="discordBtn" class="title-btn" onclick="window.open('https://discord.com/invite/D8WCtDD', '_blank')">Support</button>
+      <button id="donationBtn" class="title-btn">Donations</button>
+    </div>
+    <div class="title-drag-area" style="-webkit-app-region: drag;"></div>
+  </div>
+
+  <div id="toast" class="toast-hidden">Address copied to clipboard!</div>
+
+  <div id="supportModal" class="modal">
+    <div class="modal-content">
+      <span id="closeSupportBtn" class="close-btn">&times;</span>
+      <h2>Support & Information</h2>
+
+      <div class="modal-section">
+        <h3>Official Links</h3>
+        <ul>
+          <li><a href="https://refloow.com" target="_blank">Website (refloow.com)</a></li>
+          <li><a href="https://discord.com/invite/D8WCtDD" target="_blank">Discord Support Server</a></li>
+          <li><a href="https://linktr.ee/Refloow" target="_blank">Linktree (all socials)</a></li>
+        </ul>
+      </div>
+
+      <div class="modal-section" style="border-top: 1px solid #2a3a60; padding-top: 20px; margin-top: 20px;">
+        <button id="openDonationsFromSupportBtn" class="analyse-btn" style="width: 100%; margin-bottom: 10px; background-color: #4587e9; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer;">☕ Support Development (Donations)</button>
+        <button id="openCreditsBtn" class="browse-btn" style="width: 100%; background-color: #1f2b4c; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer;">📜 Open Source Credits</button>
+      </div>
+    </div>
+  </div>
+
+<div id="creditsModal" class="modal">
+    <div class="modal-content">
+      <span id="closeCreditsBtn" class="close-btn">&times;</span>
+      <h2>Open Source Credits</h2>
+      <div class="modal-section">
+        <p style="font-size: 0.95em; color: #a0a0a0;">
+          This software is built on the shoulders of giants. Thank you to the creators and maintainers of the following open-source technologies:
+        </p>
+        <ul>
+          <li><a href="https://www.electronjs.org/" target="_blank">Electron</a> - Core Desktop Application Framework</li>
+          <li><a href="https://github.com/fengyuanchen/cropperjs" target="_blank">Cropper.js</a> - Image Cropping & Manipulation Engine</li>
+          <li><a href="https://onnxruntime.ai/" target="_blank">ONNX Runtime Web</a> - Machine Learning Inference Engine</li>
+          <li><a href="https://huggingface.co/BritishWerewolf/U-2-Netp" target="_blank">U-2-Netp ONNX Model</a> - AI Background Removal (Hosted by BritishWerewolf)</li>
+          <li><a href="https://www.electron.build/" target="_blank">Electron Builder & Updater</a> - Application Packaging and Auto-Updates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="donationModal" class="modal">
+    <div class="modal-content" style="max-width: 950px;">
+      <span class="close-donation-btn close-btn">&times;</span>
+      <h2 style="color: #458ce9; margin-bottom: 10px;">Support Development</h2>
+      <p style="font-size: 0.95em; color: #a0a0a0; margin-bottom: 25px;">
+        If this tool has assisted your work, consider supporting future updates!
+      </p>
+
+<div class="crypto-row">
+          <span class="crypto-label">Bitcoin (BTC)</span>
+          <input type="text" class="crypto-input" value="bc1qay2l04mmqhztq8mj7usjlff22ay6a37x9pl9uk" readonly onclick="copyToClipboard(this)" />
+        </div>
+
+        <div class="crypto-row">
+          <span class="crypto-label">Ethereum, Polygon & Arbitrum (ETH, POL, ARB or Any Stablecoins)</span>
+          <input type="text" class="crypto-input" value="0xFD531dc8e3E78C57212F303f684f5A2aD312f7ca" readonly onclick="copyToClipboard(this)" />
+        </div>
+
+        <div class="crypto-row">
+          <span class="crypto-label">Solana (SOL) or any stablecoins</span>
+          <input type="text" class="crypto-input" value="8LFVByQUKJVGnBBoAso9KqCbUnFtm875gMkumMRNnEZ2" readonly onclick="copyToClipboard(this)" />
+        </div>
+
+        <div class="crypto-row">
+          <span class="crypto-label">Tron (TRX) or stablecoins</span>
+          <input type="text" class="crypto-input" value="TMEeyojQaC6HXBww7FGQKkF1ZcDeUr3esW" readonly onclick="copyToClipboard(this)" />
+        </div>
+
+        <div class="crypto-row">
+          <span class="crypto-label">Kaspa (KAS)</span>
+          <input type="text" class="crypto-input" value="kaspa:qrzd6vvd9h32cxr776l5vx3q94uyyp9wp7fjs36qjx3hltldxz0kwh9qy9hak" readonly onclick="copyToClipboard(this)" />
+        </div>
+
+        <div class="crypto-row">
+          <span class="crypto-label">Monero (XMR)</span>
+          <input type="text" class="crypto-input" value="46Aff9taPnbDqdkbSJ8rAzWqAyuKugt3b87irbcUcbLiSkgPff1YFRW3SRoLJtaA4sQhFTbdy7VFa97LpN4yhXRp3vz9vnj" readonly onclick="copyToClipboard(this)" />
+        </div>
+
+        <div class="crypto-row">
+          <span class="crypto-label">Litecoin (LTC)</span>
+          <input type="text" class="crypto-input" value="ltc1qvrhhgvyhl7f08r9pmchnzzfhgffuzwzqfpr3hm" readonly onclick="copyToClipboard(this)" />
+        </div>
+
+        <div class="crypto-row">
+          <span class="crypto-label">Bitcoin Cash (BCH)</span>
+          <input type="text" class="crypto-input" value="qqe99z466a8wdknxvxkcw60p72ddhkg2lvfuh9jqzz" readonly onclick="copyToClipboard(this)" />
+        </div>
+    </div>
+  </div>
+</body>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <h4>Refloow Photo Studio</h4>
+      <div class="tool-group">
+        <button id="btn-upload">Upload Photo</button>
+      </div>
+      
+      <div class="tool-group">
+        <h3>Adjustments</h3>
+        <button id="btn-crop" class="tool-btn">Crop</button>
+        <button id="btn-mirror" class="tool-btn">Mirror &lt;||&gt;</button>
+        <button id="btn-remove-bg" class="tool-btn">Remove BG</button>
+      </div>
+
+      <div class="tool-group bottom">
+        <button id="btn-export" class="primary">Export</button>
+      </div>
+    </aside>
+
+<main class="workspace" style="display: flex; flex-direction: column; height: 100vh; overflow: hidden;">
+      
+<div id="top-adjustments-bar" style="display: none;">
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Contrast</label>
+            <span id="val-contrast" class="slider-value">100</span>
+          </div>
+          <input type="range" id="slide-contrast" min="0" max="200" value="100">
+        </div>
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Saturation</label>
+            <span id="val-saturate" class="slider-value">100</span>
+          </div>
+          <input type="range" id="slide-saturate" min="0" max="200" value="100">
+        </div>
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Brightness</label>
+            <span id="val-brightness" class="slider-value">100</span>
+          </div>
+          <input type="range" id="slide-brightness" min="0" max="200" value="100">
+        </div>
+        <div class="slider-group">
+          <div class="slider-header">
+            <label>Warmth</label>
+            <span id="val-warmth" class="slider-value">0</span>
+          </div>
+          <input type="range" id="slide-warmth" min="-100" max="100" value="0">
+        </div>
+      </div>
+
+      <div class="canvas-container" id="drop-zone">
+        <p id="placeholder-text">Click Upload or Drag & Drop here</p>
+        
+        <div id="image-wrapper">
+          <img id="editor-image" style="display: none;">
+          <div id="layers-container"></div> 
+        </div>
+
+        <div id="drag-overlays" style="display: none;">
+          <div id="main-drop-overlay" class="drop-overlay blue-zone">
+            <h2>Replace Base Image</h2>
+          </div>
+          <div id="layer-drop-overlay" class="drop-overlay gold-zone">
+            <h2>Drop as Layer</h2>
+          </div>
+        </div>
+      </div>
+
+      <div id="filter-dock" style="display: none;">
+        <div class="filter-track-container">
+          <button id="scroll-left" class="scroll-btn">&lt;</button>
+          <div id="filter-track">
+            </div>
+          <button id="scroll-right" class="scroll-btn">&gt;</button>
+        </div>
+      </div>
+
+      <input type="file" id="file-input" accept="image/png, image/jpeg, image/webp" style="display: none;">
+    </main>
+
+    <aside class="sidebar right-sidebar" id="layers-panel" style="display: none;">
+      <h2>Layers</h2>
+      <ul id="layer-list" class="layer-list"></ul>
+    </aside>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Top Bar Buttons
+    const discordBtn = document.getElementById("discordBtn"); // Acts as Support top-bar btn
+    const donationBtn = document.getElementById("donationBtn");
+    
+    // Modals
+    const supportModal = document.getElementById("supportModal");
+    const donationModal = document.getElementById("donationModal");
+    const creditsModal = document.getElementById("creditsModal");
+    
+    // Internal buttons
+    const openDonationsFromSupportBtn = document.getElementById("openDonationsFromSupportBtn");
+    const openCreditsBtn = document.getElementById("openCreditsBtn");
+
+    // Close buttons
+    const closeSupportBtn = document.getElementById("closeSupportBtn");
+    const closeCreditsBtn = document.getElementById("closeCreditsBtn");
+    const closeDonationBtn = document.querySelector(".close-donation-btn");
+
+    // Click Handlers to Open
+    discordBtn.onclick = () => supportModal.style.display = "block";
+    donationBtn.onclick = () => donationModal.style.display = "block";
+    
+    openCreditsBtn.onclick = () => {
+        supportModal.style.display = "none";
+        creditsModal.style.display = "block";
+    };
+
+    openDonationsFromSupportBtn.onclick = () => {
+        supportModal.style.display = "none";
+        donationModal.style.display = "block";
+    };
+
+    // Click Handlers to Close
+    closeSupportBtn.onclick = () => supportModal.style.display = "none";
+    closeCreditsBtn.onclick = () => creditsModal.style.display = "none";
+    closeDonationBtn.onclick = () => donationModal.style.display = "none";
+
+    // Close Modals when clicking outside the box
+    window.onclick = (event) => {
+        if (event.target == supportModal) supportModal.style.display = "none";
+        if (event.target == donationModal) donationModal.style.display = "none";
+        if (event.target == creditsModal) creditsModal.style.display = "none";
+    };
+});
+
+// Toast & Copy Logic
+let toastTimeout;
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2500);
+}
+
+function copyToClipboard(inputElement) {
+    inputElement.select();
+    navigator.clipboard.writeText(inputElement.value).then(() => {
+        showToast("Address copied to clipboard!");
+    }).catch((err) => {
+        console.error("Failed to copy text: ", err);
+    });
+}
+</script>
+</html>
+

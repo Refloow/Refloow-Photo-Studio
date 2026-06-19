@@ -1,0 +1,111 @@
+{
+  "name": "refloow-photo-studio",
+  "version": "1.0.0",
+  "description": "Powerful local photo editor built for quick, professional results. No accounts, no ads, no watermarks, no data collection - just editing",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder --win --publish never",
+    "package:mac": "electron-builder --mac --publish never",
+    "package:linux": "electron-builder --linux --publish never",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Refloow/Refloow-Photo-Studio.git"
+  },
+  "keywords": [
+    "photo",
+    "editor",
+    "photoeditor",
+    "filters",
+    "editing",
+    "images",
+    "png",
+    "jpg",
+    "background-removal"
+  ],
+  "author": "Veljko Vuckovic (Refloow.com)",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "cropperjs": "1.6.2",
+    "electron-updater": "6.8.3",
+    "onnxruntime-web": "1.26.0"
+  },
+  "devDependencies": {
+    "electron": "40.4.0",
+    "electron-builder": "26.7.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Refloow/Refloow-Photo-Studio/issues"
+  },
+  "homepage": "https://github.com/Refloow/Refloow-Photo-Studio#readme",
+  "build": {
+    "appId": "com.refloow.photostudio",
+    "productName": "Refloow Photo Studio",
+    "copyright": "Copyright © Refloow",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/onnxruntime-web/**"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "**/*",
+      "!**/*.ts",
+      "!npm-debug.log*",
+      "!**/.git",
+      "!**/.vscode",
+      "!**/.idea",
+      "!**/*.map",
+      "!node_modules/.bin/**/*",
+      "!node_modules/electron/**/*",
+      "!dist/electron/**/*.js"
+    ],
+    "win": {
+      "icon": "img/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "mac": {
+      "icon": "img/iconMAC.png",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "linux": {
+      "icon": "img/RefloowLogo.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Graphics",
+      "maintainer": "Veljko Vuckovic <legal@refloow.com>",
+      "description": "Powerful local photo editor built for quick, professional results."
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "Refloow",
+      "repo": "Refloow-Photo-Studio"
+    },
+    "npmRebuild": false,
+    "nsis": {
+      "oneClick": false,
+      "license": "LICENSE",
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "img/icon.ico",
+      "shortcutName": "Refloow Photo Studio",
+      "createDesktopShortcut": true,
+      "perMachine": false,
+      "uninstallDisplayName": "Refloow Photo Studio"
+    }
+  }
+}

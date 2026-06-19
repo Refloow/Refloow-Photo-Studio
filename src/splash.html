@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Refloow Photo Studio</title>
+    <!-- I used css inside of the file instead in the styles.css here becuase i want this to be portable and likely used in other electron apps -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: transparent;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            border: none;
+            box-sizing: border-box;
+        }
+        .splash-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo-img {
+            width: 240px;
+            height: auto;
+            animation: pulse 6s infinite, gleam 2s infinite;
+            margin-bottom: 50px;
+            will-change: transform, opacity;
+            filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8)) 
+                    drop-shadow(0 0 5px rgba(0, 0, 0, 1));
+            mask-size: 200%;        
+        }
+
+
+        .loading-text {
+            font-size: 1rem;
+            color: #888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .loader-bar {
+            width: 150px;
+            height: 2px;
+            background-color: #333;
+            margin-top: 15px; 
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        .loader-progress {
+            width: 50%;
+            height: 100%;
+
+            animation: slide 1.8s infinite ease-in-out;
+                        background: linear-gradient(90deg, #cbcbcb, #cfcfcf);
+            box-shadow: 0 0 8px #e4e4e4;
+
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        @keyframes slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+                @keyframes gleam {
+    0% { mask-position: 150%; }
+    100% { mask-position: -50%; }
+}
+    </style>
+</head>
+<body>
+    <div class="splash-container">
+        <img src="./img/refloow-photo-studio-logo.png" alt="Refloow Logo" class="logo-img">
+        <div class="loading-text">loading...</div>
+        
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+</body>
+</html>
