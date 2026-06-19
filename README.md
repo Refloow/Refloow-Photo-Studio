@@ -4,6 +4,9 @@ Powerful local easy to use image editor, quick edits, cutting, filters, few clic
 - No watermarks
 - No ads
 - Free forever
+- No logins
+- No data collection
+- Fully private
 - Instant background removal
 - Easy image cropping
 - Easy image mirroring
