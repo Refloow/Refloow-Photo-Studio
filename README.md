@@ -15,6 +15,22 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 
 ## Features
 
+| Original | Removed Background |
+| :---: | :---: |
+| <img width="1916" height="1027" alt="image" src="https://github.com/user-attachments/assets/3b0f3c3b-ea23-454d-8a66-302772dce2c4" /> | <img width="1914" height="1027" alt="image" src="https://github.com/user-attachments/assets/843040c8-b4c4-4e9e-ac90-aa19cd37a2f1" />
+
+| Original | With filter |
+| :---: | :---: |
+| <img width="1908" height="1021" alt="image" src="https://github.com/user-attachments/assets/4a58e887-f000-438e-931b-99e84aa88419" /> | <img width="1911" height="1025" alt="image" src="https://github.com/user-attachments/assets/8b859d13-b394-4e20-a34e-c5402db1a657" />
+
+| Cropping | Cropped & Color Edited |
+| :---: | :---: |
+| <img width="1912" height="1019" alt="image" src="https://github.com/user-attachments/assets/a85751ef-8a75-45fa-999f-87e8ba44893d" /> | <img width="1912" height="1009" alt="image" src="https://github.com/user-attachments/assets/23d827e2-7779-47b5-ad8a-30ca9cfbf0cb" />
+
+| **Drag & Drop** | **Layering** |
+| :---: | :---: |
+| <img  alt="image" src="https://github.com/user-attachments/assets/2d8a7adc-9df2-46ce-a4e7-2d821c6e366a" /> | <img width="1917" height="1021" alt="image" src="https://github.com/user-attachments/assets/16d576c5-661f-47e1-80cc-ca1be7c0f077" />
+
 ### Privacy & Freedom
 
 * No watermarks
@@ -40,6 +56,12 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 Choose from over **40 built-in filters**, including:
 
 Vintage, Black & White, Vibrant, Cinematic, Faded, Cool, Warm, Dramatic, Noir, Cyberpunk, Polaroid, Neon, Autumn, Midnight, Washed, Gothic, Sunset, Alien, Invert, Matrix, Retro 80s, Frostbite, Desert, Lomo, X-Ray, Muted, Emerald, Ruby, Sapphire, Ghost, Hacker, Dreamy, Toasted, Arctic, Overdrive, Rust, Moonlight, Psychedelic, and Abyss.
+
+
+
+ 
+
+
 
 ## Philosophy
 
