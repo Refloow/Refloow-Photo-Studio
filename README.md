@@ -7,6 +7,10 @@ Refloow Photo Studio
 
 **Refloow Photo Studio** is built on a simple idea: photo editing shouldn't require a degree or months of tutorials.
 
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2020.10.0-brightgreen)](https://nodejs.org/)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange)](https://github.com/Refloow/Refloow-Photo-Studio)
+
 The goal of the project is to make professional-looking photo editing accessible to everyone, regardless of skill level. With just a few clicks, users can achieve high-quality results while preserving 100% of the original image quality. Everything runs locally, remains completely private, and requires no accounts, subscriptions, or data collection.
 
 <img width="2549" height="1365" alt="image" src="https://github.com/user-attachments/assets/f3b535e5-5a5c-4793-a78c-d16d41484d2b" />
