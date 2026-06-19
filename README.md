@@ -4,7 +4,7 @@
 
 The goal of the project is to make professional-looking photo editing accessible to everyone, regardless of skill level. With just a few clicks, users can achieve high-quality results while preserving 100% of the original image quality. Everything runs locally, remains completely private, and requires no accounts, subscriptions, or data collection.
 
-Refloow Photo Studio is free, open source, and designed to feel familiar and intuitive for beginners and experienced users alike.
+Refloow Photo Studio is free, open source desktop app designed to feel familiar and intuitive for beginners and experienced users alike.
 
 ## Features
 
