@@ -144,6 +144,32 @@ To ensure stable performanc, the following specifications are recommended:
 | **RAM** | 2 GB | 4 GB+ |
 | **Processor** | Dual-core 2.0GHz | Quad-core+ |
 
+
+## License (community edition)
+
+This project (community edition) is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. This ensures that the tool remains open-source and that any improvements made by the community are shared back with the public.
+This version is made available for individuals, students, content creators, and everyone interested in photo editing under restrictions of GNU Affero General Public License v3.0 (AGPL-3.0) license
+
+## License (Commercial) - For Institutions
+
+**Enterprise License** exists with Proprietary licensing for government, enterprise, and closed-source commercial deployment is available providing:
+1. AGPL Exemption: Edit, modify, and deploy without sharing your changes.
+2. Keep your intellectual property closed
+3. Internal network deployment rights
+4. Priority dedicated technical support
+   
+To obtain this enterprise license inquire using available contact options for further details and contract:
+
+## Contact & Support
+
+* **Founder:** Veljko Vuckovic
+* **Website:** [refloow.com](https://refloow.com)
+* **All social links:** [linktree](https://linktr.ee/Refloow)
+* **Official community telegram:** [link](https://t.me/+LC9l6d-Jhco2NTU0)
+* **Official community discord:** [link](https://discord.com/invite/D8WCtDD)
+* refloowbusiness@gmail.com
+---
+
 ### Thanks for free showcase images to unsplash.com and photographers with sources listed below
 - Photo by <a href="https://unsplash.com/@shotbynate?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nate Dieckhaus</a> on <a href="https://unsplash.com/photos/a-silver-bugatti-is-parked-in-front-of-a-building-vyJXWugiKYs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/photos/purple-and-black-ford-mustang-4BKiS_BgOwI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
