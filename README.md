@@ -128,6 +128,22 @@ This project is not funded by anyone directly to be made, so ways of donating ca
     qqe99z466a8wdknxvxkcw60p72ddhkg2lvfuh9jqzz
     ```
 
+## System Requirements & Technical Specs
+
+To ensure stable performanc, the following specifications are recommended:
+
+### **Software Requirements**
+* **Operating System:** Windows 10/11, macOS (Intel/Apple Silicon), or Linux (Ubuntu/Debian recommended).
+* **Runtime:** Node.js **v20.10.0** or higher.
+* **Framework:** Built with Electron for cross-platform desktop compatibility.
+
+### **Hardware Requirements**
+| Component | Minimum | Recommended |
+| :--- | :--- | :--- |
+| **Storage** | ~440 MB for installation | 500 MB+ |
+| **RAM** | 2 GB | 4 GB+ |
+| **Processor** | Dual-core 2.0GHz | Quad-core+ |
+
 ### Thanks for free showcase images to unsplash.com and photographers with sources listed below
 - Photo by <a href="https://unsplash.com/@shotbynate?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nate Dieckhaus</a> on <a href="https://unsplash.com/photos/a-silver-bugatti-is-parked-in-front-of-a-building-vyJXWugiKYs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/photos/purple-and-black-ford-mustang-4BKiS_BgOwI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
