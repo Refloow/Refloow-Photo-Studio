@@ -1,5 +1,5 @@
 <h1 align="center">
-Refloow Photo Studio
+Refloow Photo Studio Official Github Repository
 </h1>
 <p align="center">
 <img width="166" height="175" alt="refloow-photo-studio-logo" src="https://github.com/user-attachments/assets/9b33465f-81b4-45ca-a20c-4d09941cd4af" />
