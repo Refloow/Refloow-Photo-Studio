@@ -1,6 +1,6 @@
 {
   "name": "refloow-photo-studio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Powerful local photo editor built for quick, professional results. No accounts, no ads, no watermarks, no data collection - just editing",
   "main": "main.js",
   "scripts": {
