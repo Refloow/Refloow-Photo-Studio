@@ -174,6 +174,26 @@ To obtain this enterprise license inquire using available contact options for fu
 * refloowbusiness@gmail.com
 ---
 
+## Dev Installation (compiling from source)
+
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/Refloow/Refloow-Photo-Studio.git](https://github.com/Refloow/Refloow-Photo-Studio.git)
+    cd Refloow-Photo-Studio/src
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the Application**
+    ```bash
+    npm start
+    ```
+
+---
+
 ### Thanks for free showcase images to unsplash.com and photographers with sources listed below
 - Photo by <a href="https://unsplash.com/@shotbynate?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nate Dieckhaus</a> on <a href="https://unsplash.com/photos/a-silver-bugatti-is-parked-in-front-of-a-building-vyJXWugiKYs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/photos/purple-and-black-ford-mustang-4BKiS_BgOwI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
