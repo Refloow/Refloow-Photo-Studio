@@ -23,6 +23,9 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 > 
 > If you find this tool useful leave a ⭐ to support my work (its free) and helps others discover the software
 
+### Links 
+[**Resources and socials**](https://linktr.ee/Refloow) | [**Report a Bug/Request feature**](https://github.com/Refloow/Refloow-Photo-Studio/issues) | [**Other Refloow Software**](https://refloow.com/open-source-software) |  [**Community Discord Server**](https://discord.gg/hcafD8Be7X) 
+
 ## Features
 
 | Original | Removed Background |
