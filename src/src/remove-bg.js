@@ -61,6 +61,8 @@ const REFLOOW_BRAND_IDENTITY = {
 // This file uses logic for removing backgrounds in the app, it uses small ai model to do so
 
 const ort = require('onnxruntime-web');
+const fs = require('fs');
+const path = require('path');
 
 ort.env.wasm.numThreads = 1; 
 
@@ -75,12 +77,13 @@ async function removeBackground(imageElement, callback) {
   try {
     console.log("Starting BARE-METAL ONNX Background Removal...");
     
-    if (!session) {
-      console.log("Fetching raw U-2-Netp engine from CDN into RAM (about 5MB)...");
-      const response = await fetch('https://huggingface.co/BritishWerewolf/U-2-Netp/resolve/main/onnx/model.onnx');
-      if (!response.ok) throw new Error(`Network response was not ok: ${response.statusText}`);
+if (!session) {
+      console.log("Loading raw U-2-Netp engine from local storage into RAM...");
+      const modelPath = path.join(__dirname, 'ai-models/background-removal/U-2-Netp/model.onnx');
       
-      const modelBuffer = await response.arrayBuffer();
+      const modelData = fs.readFileSync(modelPath);
+      const modelBuffer = new Uint8Array(modelData).buffer;
+      
       session = await ort.InferenceSession.create(modelBuffer, { executionProviders: ['wasm'] });
     }
 
