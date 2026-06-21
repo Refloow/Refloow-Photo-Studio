@@ -68,7 +68,6 @@ let mainWindow;
 let splashWindow;
 
 function createWindow() {
-  // 1. Create the Splash Screen Window
     splashWindow = new BrowserWindow({
         width: 450,
         height: 350,
@@ -90,7 +89,7 @@ function createWindow() {
       splashWindow.show();
   });
 
-  // 2. Create the Main Application Window
+  // The Main Application Window
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 800,
@@ -102,7 +101,7 @@ function createWindow() {
     },
     backgroundColor: '#121212',
     icon: path.join(__dirname, 'img', 'icon.ico'),
-    show: false, // IMPORTANT: Keep hidden until loaded
+    show: false, // IMPORTANT: Keeps it hidden until loaded
     webPreferences: {
       nodeIntegration: true, 
       contextIsolation: false,
@@ -111,16 +110,20 @@ function createWindow() {
 
   mainWindow.loadFile('index.html');
 
-  // 3. Swap the windows when the main app is fully loaded
+  // Intercept target="_blank" links and open them in the user's default browser
+  // Stops opening new electron windows
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+        require('electron').shell.openExternal(url);
+        return { action: 'deny' };
+  });
+
   mainWindow.webContents.on('did-finish-load', () => {
-      // Adding a slight delay (1.5s) so the user actually sees the premium splash animation 
-      // even if your app loads extremely fast.
       setTimeout(() => {
           if (splashWindow && !splashWindow.isDestroyed()) {
               splashWindow.close();
           }
           mainWindow.show();
-          mainWindow.focus(); // Ensure the main window grabs focus
+          mainWindow.focus();
       }, 1500); 
   });
 }
@@ -141,7 +144,7 @@ app.on('window-all-closed', () => {
   }
 });
 
-// Your existing IPC handlers...
+
 ipcMain.handle('save-image', async (event, base64Data) => {
   const { canceled, filePath } = await dialog.showSaveDialog({
     title: 'Export Image',
