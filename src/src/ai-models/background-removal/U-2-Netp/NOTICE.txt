@@ -1,0 +1,4 @@
+This software includes the U-2-Netp model, licensed under the Apache License, Version 2.0.
+Original U-2-Net architecture by Qin, Xuebin et al.
+"U^2-Net: Going Deeper with Nested U-Structure for Salient Object Detection." Pattern Recognition (2020).
+
