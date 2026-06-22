@@ -65,8 +65,28 @@ let translateX = 0;
 let translateY = 0;
 let isDragging = false;
 let startX, startY;
+let isZoomLocked = false;
 
 window.editorZoomScale = 1;
+
+window.disableWorkspaceZoom = () => {
+  isZoomLocked = true;
+  const wrapper = document.getElementById('image-wrapper');
+  if (wrapper) wrapper.style.transform = `translate(0px, 0px) scale(1)`;
+};
+
+window.enableWorkspaceZoom = () => {
+  isZoomLocked = false;
+  scale = 1; 
+  translateX = 0;
+  translateY = 0;
+  window.editorZoomScale = 1;
+  
+  const wrapper = document.getElementById('image-wrapper');
+  if (wrapper) wrapper.style.transform = `translate(0px, 0px) scale(1)`;
+  
+  setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
+};
 
 function setupZoom() {
   const container = document.querySelector('.canvas-container');
@@ -76,43 +96,41 @@ function setupZoom() {
 
   wrapper.style.transformOrigin = '0 0';
 
-  // --- ZOOMING (Mouse Wheel) ---
   container.addEventListener('wheel', (e) => {
+    if (isZoomLocked) return; 
+
     const img = document.getElementById('editor-image');
     if (!img || !img.src || img.src === window.location.href) return;
     
     e.preventDefault();
 
-    // Determine zoom speed
     const zoomSensitivity = 0.0015;
     const delta = -e.deltaY * zoomSensitivity;
     let newScale = scale * (1 + delta);
 
-    // Clamp zoom between 10% and 1500%
     newScale = Math.max(0.1, Math.min(newScale, 15));
 
     const rect = wrapper.getBoundingClientRect();
     const cursorX = e.clientX - rect.left;
     const cursorY = e.clientY - rect.top;
 
-    // Adjust the translation so the image zooms exactly where the mouse is pointing
     const scaleRatio = (newScale / scale) - 1;
     translateX -= cursorX * scaleRatio;
     translateY -= cursorY * scaleRatio;
 
     scale = newScale;
-    window.editorZoomScale = scale;
+    window.editorZoomScale = scale; 
 
     applyTransform();
   });
 
-  // --- PANNING (Middle Click OR Spacebar + Left Click) ---
   let spacePressed = false;
   document.addEventListener('keydown', (e) => { if (e.code === 'Space') spacePressed = true; });
   document.addEventListener('keyup', (e) => { if (e.code === 'Space') spacePressed = false; });
 
   container.addEventListener('mousedown', (e) => {
-    // Check for Middle Mouse Button (1) OR Spacebar + Left Click (0)
+    if (isZoomLocked) return;
+
     if (e.button === 1 || (e.button === 0 && spacePressed)) {
       e.preventDefault();
       isDragging = true;
