@@ -103,6 +103,7 @@
     },
     "snap": {
       "summary": "Powerful local photo editor built for quick, professional results.",
+      "description": "Powerful local photo editor built for quick, professional results. No accounts, no ads, no watermarks, no data collection - just editing, filtering, background removing, cropping & layering",
       "confinement": "strict",
       "plugs": [
         "default",
