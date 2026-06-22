@@ -6,6 +6,7 @@ const { flipImage } = require('./src/flip');
 const { setupLayers } = require('./src/layers');
 const { removeBackground } = require('./src/remove-bg');
 const { setupFilters } = require('./src/filters');
+const { setupZoom } = require('./src/zoom');
 
 const imageElement = document.getElementById('editor-image');
 const cropBtn = document.getElementById('btn-crop'); 
@@ -64,6 +65,7 @@ setupUpload(
 );
 
 setupExport();
+setupZoom();
 
 cropBtn.addEventListener('click', () => {
   if (!imageElement.src || imageElement.src === window.location.href) return; 
