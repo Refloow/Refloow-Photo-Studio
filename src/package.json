@@ -91,7 +91,7 @@
       ]
     },
     "linux": {
-      "icon": "img/RefloowLogo.png",
+      "icon": "img/iconLINUX.png",
       "target": [
         "AppImage",
         "deb",
