@@ -23,7 +23,8 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 
 > [!IMPORTANT]
 > If you find this tool useful leave a ⭐ to support my work (its free) and helps others discover the software
-> You can download builds from https://github.com/Refloow/Refloow-Photo-Studio/releases or from snapcraft.io linux store
+> You can download windows/linux/macOS builds from https://github.com/Refloow/Refloow-Photo-Studio/releases or from snapcraft.io linux store
+> flathub & microsoft store inclusions are still pending
 
 ### Links 
 [**Resources and socials**](https://linktr.ee/Refloow) | [**Report a Bug/Request feature**](https://github.com/Refloow/Refloow-Photo-Studio/issues) | [**Other Refloow Software**](https://refloow.com/open-source-software) |  [**Community Discord Server**](https://discord.gg/hcafD8Be7X) 
