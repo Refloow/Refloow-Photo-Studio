@@ -78,6 +78,8 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 * Overlay photos and create complex compositions
 * Drag-and-drop support
 * Advanced undo and redo history (up to 15 actions, `Ctrl + Z` / `Ctrl + Y`)
+* Zooming (scrollwheel)
+* Panning (holding middle mouse button)
 
 ### Professional Filters
 
