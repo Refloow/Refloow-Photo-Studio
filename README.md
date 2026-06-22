@@ -12,7 +12,10 @@ Refloow Photo Studio Official Github Repository
 [![Version](https://img.shields.io/badge/version-1.0.0-orange)](https://github.com/Refloow/Refloow-Photo-Studio)
 ![Badge](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2FRefloow%2FRefloow-Photo-Studio&label=Views&icon=eye-fill&color=%23198754&message=&style=flat&tz=UTC)
 
+
 The goal of the project is to make professional-looking photo editing accessible to everyone, regardless of skill level. With just a few clicks, users can achieve high-quality results while preserving 100% of the original image quality. Everything runs locally, remains completely private, and requires no accounts, subscriptions, or data collection.
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/refloow-photo-studio)
 
 <img width="2549" height="1365" alt="image" src="https://github.com/user-attachments/assets/f3b535e5-5a5c-4793-a78c-d16d41484d2b" />
 
