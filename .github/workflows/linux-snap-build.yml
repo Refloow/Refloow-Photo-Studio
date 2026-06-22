@@ -1,4 +1,4 @@
-name: Build Linux Release
+name: Build Linux Snap Release
 
 on:
   workflow_dispatch:
