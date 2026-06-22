@@ -86,11 +86,12 @@ function getRenderedBounds() {
     x = imgRect.left + (imgRect.width - w) / 2;
   }
 
+  const scale = window.editorZoomScale || 1;
   return {
-    x: x - containerRect.left,
-    y: y - containerRect.top,
-    w: w,
-    h: h
+    x: (x - containerRect.left) / scale,
+    y: (y - containerRect.top) / scale,
+    w: w / scale,
+    h: h / scale
   };
 }
 
@@ -241,13 +242,18 @@ function setupLayers() {
 
     function elementDrag(e) {
       e.preventDefault();
-      pos1 = pos3 - e.clientX;
-      pos2 = pos4 - e.clientY;
+      
+      const scale = window.editorZoomScale || 1; // Read current zoom
+
+      // Divide the drag distance by scale so the layer stays perfectly under the cursor
+      pos1 = (pos3 - e.clientX) / scale;
+      pos2 = (pos4 - e.clientY) / scale;
       pos3 = e.clientX;
       pos4 = e.clientY;
+      
       element.style.top = (element.offsetTop - pos2) + "px";
       element.style.left = (element.offsetLeft - pos1) + "px";
-    }
+    } 
 
     function closeDragElement() {
       document.onmouseup = null;
