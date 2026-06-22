@@ -107,13 +107,7 @@
       "confinement": "strict",
       "plugs": [
         "default",
-        "desktop",
-        "desktop-legacy",
-        "x11",
-        "wayland",
-        "home",
-        "removable-media",
-        "network"
+        "removable-media"
       ]
     },
     "publish": {
