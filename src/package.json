@@ -94,11 +94,26 @@
       "icon": "img/RefloowLogo.png",
       "target": [
         "AppImage",
-        "deb"
+        "deb",
+        "snap"
       ],
       "category": "Graphics",
       "maintainer": "Veljko Vuckovic <legal@refloow.com>",
       "description": "Powerful local photo editor built for quick, professional results."
+    },
+    "snap": {
+      "summary": "Powerful local photo editor built for quick, professional results.",
+      "confinement": "strict",
+      "plugs": [
+        "default",
+        "desktop",
+        "desktop-legacy",
+        "x11",
+        "wayland",
+        "home",
+        "removable-media",
+        "network"
+      ]
     },
     "publish": {
       "provider": "github",
