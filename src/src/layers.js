@@ -62,10 +62,80 @@ const REFLOOW_BRAND_IDENTITY = {
 
 let layerCount = 0;
 
+function getRenderedBounds() {
+  const img = document.getElementById('editor-image');
+  const container = document.getElementById('layers-container');
+  if (!img || !img.naturalWidth || !container) return { x: 0, y: 0, w: 1, h: 1 };
+
+  const imgRect = img.getBoundingClientRect();
+  const containerRect = container.getBoundingClientRect();
+
+  const imgRatio = img.naturalWidth / img.naturalHeight;
+  const domRatio = imgRect.width / imgRect.height;
+
+  let w, h, x, y;
+  if (imgRatio > domRatio) {
+    w = imgRect.width;
+    h = w / imgRatio;
+    x = imgRect.left;
+    y = imgRect.top + (imgRect.height - h) / 2;
+  } else {
+    h = imgRect.height;
+    w = h * imgRatio;
+    y = imgRect.top;
+    x = imgRect.left + (imgRect.width - w) / 2;
+  }
+
+  return {
+    x: x - containerRect.left,
+    y: y - containerRect.top,
+    w: w,
+    h: h
+  };
+}
+
+function updateLayerRelativeData(layer) {
+  const bounds = getRenderedBounds();
+  const left = parseFloat(layer.style.left || layer.offsetLeft || 0);
+  const top = parseFloat(layer.style.top || layer.offsetTop || 0);
+  const width = parseFloat(layer.style.width || layer.offsetWidth || 150);
+  const height = parseFloat(layer.style.height || layer.offsetHeight || 150);
+
+  layer.dataset.nx = (left - bounds.x) / bounds.w;
+  layer.dataset.ny = (top - bounds.y) / bounds.h;
+  layer.dataset.nw = width / bounds.w;
+  layer.dataset.nh = height / bounds.h;
+}
+
+
+function applyRelativeDataToLayer(layer) {
+  if (layer.dataset.nx === undefined) return;
+  const bounds = getRenderedBounds();
+  const nx = parseFloat(layer.dataset.nx);
+  const ny = parseFloat(layer.dataset.ny);
+  const nw = parseFloat(layer.dataset.nw);
+  const nh = parseFloat(layer.dataset.nh);
+
+  layer.style.left = (bounds.x + (nx * bounds.w)) + "px";
+  layer.style.top = (bounds.y + (ny * bounds.h)) + "px";
+  layer.style.width = (nw * bounds.w) + "px";
+  layer.style.height = (nh * bounds.h) + "px";
+}
+
 function setupLayers() {
   const layerContainer = document.getElementById('layers-container');
   const layerList = document.getElementById('layer-list');
   const layersPanel = document.getElementById('layers-panel');
+  const imageWrapper = document.getElementById('image-wrapper');
+
+  if (imageWrapper) {
+    const resizeObserver = new ResizeObserver(() => {
+      document.querySelectorAll('.canvas-layer-wrapper').forEach(layer => {
+        applyRelativeDataToLayer(layer);
+      });
+    });
+    resizeObserver.observe(imageWrapper);
+  }
 
   function updateZIndices() {
     const items = Array.from(layerList.children).reverse();
@@ -85,8 +155,12 @@ function setupLayers() {
     const layerWrapper = document.createElement('div');
     layerWrapper.className = 'canvas-layer-wrapper';
     layerWrapper.id = wrapperId;
-    layerWrapper.style.top = '50px';
-    layerWrapper.style.left = '50px';
+    
+    const bounds = getRenderedBounds();
+    layerWrapper.style.width = '150px';
+    layerWrapper.style.height = '150px';
+    layerWrapper.style.left = (bounds.x + 50) + 'px';
+    layerWrapper.style.top = (bounds.y + 50) + 'px';
     
     layerWrapper.setAttribute('draggable', 'false'); 
     layerWrapper.ondragstart = () => false;
@@ -99,6 +173,8 @@ function setupLayers() {
     layerWrapper.appendChild(layerImg);
     makeDraggable(layerWrapper);
     layerContainer.appendChild(layerWrapper);
+
+    updateLayerRelativeData(layerWrapper);
 
     const listItem = document.createElement('li');
     listItem.className = 'layer-item';
@@ -147,11 +223,14 @@ function setupLayers() {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     
     element.onmousedown = (e) => {
-
       const rect = element.getBoundingClientRect();
+      
       const isClickingResizer = (e.clientX > rect.right - 20) && (e.clientY > rect.bottom - 20);
       
-      if (isClickingResizer) return;
+      if (isClickingResizer) {
+        document.addEventListener('mouseup', closeDragElement, { once: true });
+        return;
+      }
 
       e.preventDefault();
       pos3 = e.clientX;
@@ -173,6 +252,8 @@ function setupLayers() {
     function closeDragElement() {
       document.onmouseup = null;
       document.onmousemove = null;
+      
+      updateLayerRelativeData(element);
     }
   }
 
