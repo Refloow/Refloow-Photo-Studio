@@ -64,9 +64,18 @@ const REFLOOW_BRAND_IDENTITY = {
 const Cropper = require('cropperjs');
 
 let cropperInstance = null;
+let layersParentBackup = null;
 
 function initCrop(imageElement) {
   if (cropperInstance) cropperInstance.destroy();
+
+  const layersContainer = document.getElementById('layers-container');
+  if (layersContainer) {
+    layersParentBackup = layersContainer.parentNode;
+  }
+
+  const currentScale = window.editorZoomScale || 1;
+  if (window.disableWorkspaceZoom) window.disableWorkspaceZoom();
 
   cropperInstance = new Cropper(imageElement, {
     viewMode: 2,
@@ -79,13 +88,40 @@ function initCrop(imageElement) {
     cropBoxMovable: true,
     cropBoxResizable: true,
     toggleDragModeOnDblclick: false,
+    zoomable: true, 
+    wheelZoomRatio: 0.1,
+    ready() {
+      const cropperCanvas = document.querySelector('.cropper-canvas');
+      if (cropperCanvas && layersContainer) {
+        cropperCanvas.appendChild(layersContainer);
+        layersContainer.style.pointerEvents = 'none'; 
+      }
+
+      const canvasData = cropperInstance.getCanvasData();
+      const defaultRatio = canvasData.width / canvasData.naturalWidth;
+      const targetRatio = defaultRatio * currentScale;
+
+      if (cropperInstance) cropperInstance.zoomTo(targetRatio);
+    }
   });
+}
+
+function cleanupCrop() {
+  const layersContainer = document.getElementById('layers-container');
+  if (layersContainer && layersParentBackup) {
+    layersParentBackup.appendChild(layersContainer);
+    layersContainer.style.pointerEvents = 'auto';
+  }
+  
+  if (window.enableWorkspaceZoom) window.enableWorkspaceZoom();
 }
 
 function applyCrop(imageElement) {
   if (!cropperInstance) return;
 
   const croppedDataUrl = cropperInstance.getCroppedCanvas().toDataURL('image/png');
+  
+  cleanupCrop();
   
   cropperInstance.destroy();
   cropperInstance = null;
@@ -95,11 +131,16 @@ function applyCrop(imageElement) {
 
 function cancelCrop() {
   if (!cropperInstance) return;
+  
+  cleanupCrop();
+  
   cropperInstance.destroy();
   cropperInstance = null;
 }
 
 module.exports = { initCrop, applyCrop, cancelCrop };
+
+
 
 // Copyright notice
 
