@@ -22,9 +22,8 @@ The goal of the project is to make professional-looking photo editing accessible
 Refloow Photo Studio is free, open source desktop app designed to feel familiar and intuitive for beginners and experienced users alike.
 
 > [!IMPORTANT]
-> Only official download place at the moment is releases tab of this repository: https://github.com/Refloow/Refloow-Photo-Studio/releases
-> 
 > If you find this tool useful leave a ⭐ to support my work (its free) and helps others discover the software
+> You can download builds from https://github.com/Refloow/Refloow-Photo-Studio/releases or from snapcraft.io linux store
 
 ### Links 
 [**Resources and socials**](https://linktr.ee/Refloow) | [**Report a Bug/Request feature**](https://github.com/Refloow/Refloow-Photo-Studio/issues) | [**Other Refloow Software**](https://refloow.com/open-source-software) |  [**Community Discord Server**](https://discord.gg/hcafD8Be7X) 
