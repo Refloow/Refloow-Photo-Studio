@@ -58,6 +58,11 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 | :---: | :---: |
 | <img width="1917" height="1031" alt="image" src="https://github.com/user-attachments/assets/a8e1d218-1fce-45e2-954e-25bd98c2747d" /> | <img width="1915" height="1026" alt="image" src="https://github.com/user-attachments/assets/260e1fb0-b974-4933-906f-e5a84b717123" />
 
+| **Original** | **text added** |
+| :---: | :---: |
+| <img width="1908" height="1022" alt="image" src="https://github.com/user-attachments/assets/dc79492d-1824-400a-b33e-7d217f7aa444" /> | <img width="1908" height="1025" alt="image" src="https://github.com/user-attachments/assets/89f404d7-5d4f-4f7f-839a-aae03989b067" />
+
+
 
 ### Privacy & Freedom
 
@@ -80,6 +85,7 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 * Advanced undo and redo history (up to 15 actions, `Ctrl + Z` / `Ctrl + Y`)
 * Zooming (scrollwheel)
 * Panning (holding middle mouse button)
+* Adding text to images (easily resizable & positionable as layers)
 
 ### Professional Filters
 
