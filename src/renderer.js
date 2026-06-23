@@ -7,6 +7,7 @@ const { setupLayers } = require('./src/layers');
 const { removeBackground } = require('./src/remove-bg');
 const { setupFilters } = require('./src/filters');
 const { setupZoom } = require('./src/zoom');
+const { setupText } = require('./src/text');
 
 const imageElement = document.getElementById('editor-image');
 const cropBtn = document.getElementById('btn-crop'); 
@@ -14,6 +15,8 @@ const mirrorBtn = document.getElementById('btn-mirror');
 const removeBgBtn = document.getElementById('btn-remove-bg');
 
 const { addLayer } = setupLayers();
+
+setupText(addLayer);
 
 const cropActionContainer = document.createElement('div');
 cropActionContainer.style.display = "none";
