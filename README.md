@@ -95,11 +95,6 @@ Choose from over **40 built-in filters**, including:
 Vintage, Black & White, Vibrant, Cinematic, Faded, Cool, Warm, Dramatic, Noir, Cyberpunk, Polaroid, Neon, Autumn, Midnight, Washed, Gothic, Sunset, Alien, Invert, Matrix, Retro 80s, Frostbite, Desert, Lomo, X-Ray, Muted, Emerald, Ruby, Sapphire, Ghost, Hacker, Dreamy, Toasted, Arctic, Overdrive, Rust, Moonlight, Psychedelic, and Abyss.
 
 
-
- 
-
-
-
 ## Philosophy
 
 Refloow Photo Studio is designed around one principle:
@@ -111,6 +106,14 @@ Many editors require dozens of steps and hours of learning to perform simple tas
 And this is only the beginning. More features will be added over time, but the philosophy will always remain the same:
 
 **Less complexity. More creativity.**
+
+## 📰 Featured In & Reviews
+
+Refloow Photo Studio's offline architecture and privacy-first approach have been independently reviewed and featured across industry media:
+
+*   **[Machine Brief](https://www.machinebrief.com/news/refloow-photo-studio-open-source-meets-photography-z0r7) — Open Source Meets Photography:** *"Refloow Photo Studio hits GitHub, merging open-source ethos with photography... It challenges the status quo of software development in creative fields."*
+*   **[Kompozy](https://kompozy.io/reviews/refloow-photo-studio) — 4.0/5 Product Review:** *"Best-in-class for privacy-sensitive editing... In a category where most 'AI background remover' tools want your email and a subscription, that is a real differentiator."*
+    *   *Read more:* Check out the [Refloow Feature Breakdown](https://kompozy.io/ai-tools/refloow-photo-studio) and see how it stacks up against cloud platforms on the [Kompozy Alternatives Engine](https://kompozy.io/alternatives/refloow-photo-studio).
 
 ## ☕ Support the Project
 
