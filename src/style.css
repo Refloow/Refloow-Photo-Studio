@@ -488,6 +488,7 @@ button.primary:hover {
     padding: 6px 10px; 
     border-radius: 4px;
     transition: all 0.2s ease;
+    margin: 0;
 }
 
 .title-btn:hover {
