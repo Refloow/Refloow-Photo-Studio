@@ -60,7 +60,8 @@ Refloow Photo Studio is free, open source desktop app designed to feel familiar 
 
 | **Original** | **text added** |
 | :---: | :---: |
-| <img width="1908" height="1022" alt="image" src="https://github.com/user-attachments/assets/dc79492d-1824-400a-b33e-7d217f7aa444" /> | <img width="1908" height="1025" alt="image" src="https://github.com/user-attachments/assets/89f404d7-5d4f-4f7f-839a-aae03989b067" />
+| <img width="1908" height="1022" alt="image" src="https://github.com/user-attachments/assets/dc79492d-1824-400a-b33e-7d217f7aa444" /> | <img width="2553" height="1366" alt="image" src="https://github.com/user-attachments/assets/4d287a55-882a-4280-b37f-979fed26f354" />
+
 
 
 
