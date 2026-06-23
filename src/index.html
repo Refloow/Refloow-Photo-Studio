@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Refloow Photo Studio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./src/assets/fonts/fonts.css">
   <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.css">
 </head>
 <body>
@@ -123,6 +124,24 @@
         <button id="btn-crop" class="tool-btn">Crop</button>
         <button id="btn-mirror" class="tool-btn">Mirror &lt;||&gt;</button>
         <button id="btn-remove-bg" class="tool-btn">Remove BG</button>
+
+        <button id="btn-add-text" class="tool-btn">Add Text</button>
+        
+        <div id="text-action-container" style="display: none; flex-direction: column; gap: 8px; margin-top: 8px; background: #1a1a1a; padding: 10px; border-radius: 6px; border: 1px solid #333;">
+          
+          <input type="text" id="text-input" placeholder="Type text here..." style="width: 100%; padding: 8px; background: #252526; color: white; border: 1px solid #444; border-radius: 4px;">
+          
+          <div style="display: flex; gap: 8px;">
+            <select id="text-font" style="flex: 1; padding: 6px; background: #252526; color: white; border: 1px solid #444; border-radius: 4px; font-family: 'Roboto', sans-serif;">
+              </select>
+            <input type="color" id="text-color" value="#ffffff" style="width: 40px; height: 30px; border: none; background: transparent; cursor: pointer;">
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 5px;">
+            <button id="btn-apply-text" class="primary" style="flex: 1; margin: 0;">Add</button>
+            <button id="btn-cancel-text" style="flex: 1; background-color: #555; margin: 0;">Cancel</button>
+          </div>
+        </div>
       </div>
 
       <div class="tool-group bottom">
